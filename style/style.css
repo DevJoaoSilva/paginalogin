@@ -13,10 +13,11 @@ body{
     height: 96vh;
     background: linear-gradient(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08)), url('../imagens/background2.jpg') center center no-repeat;
     font-size: 1em;
-    transition: 0.3s;
+    transition: all 0.8s;
 }
 .bodyreg{
     background: linear-gradient(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08)), url('../imagens/background3.jpg') center center no-repeat;
+    transition: all 0.8s;
 }
 section{
     position: absolute;
@@ -24,6 +25,7 @@ section{
     color: white;
     min-width: 200px;
     width: 30vw;
+    min-height: 500px;
     border-radius: 20px;
     border: 1px solid white;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.168);
@@ -33,10 +35,16 @@ section{
     backdrop-filter: blur(2px);
     text-transform: uppercase;
     padding: 20px;
-    transition: 0.3s;
+    transition: min-height 0.3s;
+}
+#login{
+    opacity: 1;
+    transition: all .5s;
 }
 #register{
     display: none;
+    opacity: 0;
+    transition: all .5s;
 }
 section h1{
     color: white;
@@ -104,4 +112,7 @@ p.btnalt{
     text-align: center;
     font-size: 0.8em;
     color: var(--cor2);
+}
+aside{
+    font-size: .5em;
 }

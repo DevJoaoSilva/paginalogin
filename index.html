@@ -1,65 +1,95 @@
 <!DOCTYPE html>
 <html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="style/style.css">
-    <script src="js/jquery.min.js"></script>
-</head>
-<body>
-    <main>
-        <section>
-            <form action="#" id="login">
-                <h1>Login</h1>
-                <div>
-                    <input type="email" required>
-                    <label for="email" id="email">Email</label>
-                </div>
-                <div>
-                    <input type="password" required>
-                    <label for="password">Password</label>
-                </div>
-                <p id="forget"><a href="#">Forget password?</a></p>
-                <div id="btn"><button >Log in</button></div>
-                <p class="btnalt btn_reg">Don't have a account? <a onclick="reg()">Register</a></p>
-            </form>
-            <form action="#" id="register">
-                <h1>Register</h1>
-                <div>
-                    <input type="text" required>
-                    <label for="nome">Nome</label>
-                </div>
-                <div>
-                    <input type="email" required>
-                    <label for="email" id="email">Email</label>
-                </div>
-                <div>
-                    <input type="password" required>
-                    <label for="password">Password</label>
-                </div>
-                <div><button >Register</button></div>
-                <p class="btnalt btn_log">Already have a account? <a>Log In</a></p>
-            </form>
-        </section>   
-    </main>
-    <footer><!--Image by <a href="https://www.freepik.com/free-vector/beach-sunset-landscape-background_4472748.htm#page=2&query=sunsete%20silhouette&position=2&from_view=search&track=robertav1">Freepik</a>!--></footer>
-    <script>
-        $(document).ready(function(){
-            $('a','.btn_reg').click(function(){
-                $("#login").fadeOut("slow", function(){
-                    $("#register").fadeIn("slow");
-                    $(document.body).addClass("bodyreg");
-                });
-             });
-             $('a','.btn_log').click(function(){
-                $("#register").fadeOut("slow", function(){
-                    $("#login").fadeIn("slow");
-                    $(document.body).removeClass("bodyreg");
-                });
-             });
-        });
-    </script>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login</title>
+        <link rel="stylesheet" href="style/style.css" />
+        <!-- <script src="js/jquery.min.js"></script> -->
+    </head>
+    <body>
+        <main>
+            <section>
+                <form action="#" id="login">
+                    <h1>Login</h1>
+                    <div>
+                        <input type="email" required />
+                        <label for="email" id="email">Email</label>
+                    </div>
+                    <div>
+                        <input type="password" required />
+                        <label for="password">Password</label>
+                    </div>
+                    <p id="forget"><a href="#">Forget password?</a></p>
+                    <div id="btn"><button>Log in</button></div>
+                    <p class="btnalt btn_reg">
+                        Don't have a account? <a onclick="reg()">Register</a>
+                    </p>
+                </form>
+                <form action="#" id="register">
+                    <h1>Register</h1>
+                    <div>
+                        <input type="text" required />
+                        <label for="nome">Nome</label>
+                    </div>
+                    <div>
+                        <input type="email" required />
+                        <label for="email" id="email">Email</label>
+                    </div>
+                    <div>
+                        <input type="password" required />
+                        <label for="password">Password</label>
+                    </div>
+                    <div><button>Register</button></div>
+                    <p class="btnalt btn_log">
+                        Already have a account? <a>Log In</a>
+                    </p>
+                </form>
+            </section>
+        </main>
+        <aside>
+            Image by
+            <a
+                href="https://www.freepik.com/free-vector/beach-sunset-landscape-background_4472748.htm#page=2&query=sunsete%20silhouette&position=2&from_view=search&track=robertav1"
+                >Freepik</a
+            >!
+        </aside>
+        <script>
+            //    $(document).ready(function () {
+            //      $('a', '.btn_reg').click(function () {
+            //        $('#login').fadeOut('slow', function () {
+            //          $('#register').fadeIn('slow');
+            //          $(document.body).addClass('bodyreg');
+            //        });
+            //      });
+            //      $('a', '.btn_log').click(function () {
+            //        $('#register').fadeOut('slow', function () {
+            //          $('#login').fadeIn('slow');
+            //          $(document.body).removeClass('bodyreg');
+            //        });
+            //      });
+            //    });
+            //Javascript
+            document.querySelector('.btn_reg a').addEventListener('click', () => {
+                document.querySelector('#login').style.opacity = 0;
+                setTimeout(() => {
+                    document.querySelector('#login').style.opacity = 0;
+                    document.querySelector('#login').style.display = 'none';
+                    document.querySelector('#register').style.opacity = 1;
+                    document.querySelector('#register').style.display = 'block';
+                    document.querySelector('body').classList.add('bodyreg');
+                }, 500);
+            });
+            document.querySelector('.btn_log a').addEventListener('click', () => {
+                document.querySelector('#register').style.opacity = 0;
+                setTimeout(() => {
+                    document.querySelector('#register').style.display = 'none';
+                    document.querySelector('#login').style.opacity = 1;
+                    document.querySelector('#login').style.display = 'block';
+                    document.querySelector('body').classList.remove('bodyreg');
+                }, 500);
+            });
+        </script>
+    </body>
 </html>
