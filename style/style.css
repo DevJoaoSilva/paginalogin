@@ -21,11 +21,13 @@ body{
 }
 section{
     position: absolute;
+    display: flex;
+    align-items: center;
     background-color: rgba(255, 255, 255, 0.104);
     color: white;
     min-width: 200px;
     width: 30vw;
-    min-height: 500px;
+    min-height: 540px;
     border-radius: 20px;
     border: 1px solid white;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.168);
@@ -35,7 +37,10 @@ section{
     backdrop-filter: blur(2px);
     text-transform: uppercase;
     padding: 20px;
-    transition: min-height 0.3s;
+    transition: all 0.8s;
+}
+section form{
+    width: 100%;
 }
 #login{
     opacity: 1;
@@ -51,8 +56,6 @@ section h1{
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
     text-align: center;
     font-size: 2.5em;
-    margin-top: 50px;
-    margin-bottom: 50px;
 }
 input:focus ~ label,
 input:valid ~ label{
@@ -92,7 +95,6 @@ section a:hover{
 #forget{
     font-size: 0.8em;
     text-align: center;
-    margin-top: -5px;
 }
 section .btn{
     text-align: center;
